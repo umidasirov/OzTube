@@ -1,0 +1,169 @@
+$primary-color: #1b0dd6;
+$secondary-color: #3f5efb;
+$white-color: #fff;
+$hover-color: #3f5efb;
+$search-border-color: #fff;
+$transition-duration: 0.3s;
+$border-radius: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: $white-color;
+}
+
+.logo {
+  width: 200px;
+  color: $white-color;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: transform $transition-duration ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  span {
+    height: 100%;
+    color: $primary-color;
+    transition: color $transition-duration ease-in-out;
+
+    &:hover {
+      color: $secondary-color;
+    }
+
+    svg {
+      font-size: 60px;
+      height: 100%;
+      transition: transform $transition-duration ease-in-out;
+
+      &:hover {
+        transform: rotate(15deg);
+      }
+
+      path {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+.css-1pht7va-MuiInputBase-root-MuiFilledInput-root::before {
+  border-color: $white-color !important;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 4px;
+  width: 40%;
+  transition: all $transition-duration ease-in-out;
+  
+  input {
+    width: 100%;
+    padding: 5px;
+    background: transparent;
+    border: 1px solid $search-border-color;
+    border-radius: $border-radius;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    color: $white-color;
+    font-size: 16px;
+    transition: all $transition-duration ease-in-out;
+    
+    &:focus {
+      border-color: $hover-color;
+      box-shadow: 0 0 5px $hover-color;
+    }
+
+    &::placeholder {
+      color: $white-color;
+      transition: color $transition-duration ease-in-out;
+    }
+  }
+
+  button {
+    height: 100%;
+    padding: 5px 10px;
+    border: 1px solid $search-border-color;
+    border-radius: $border-radius;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: $primary-color;
+    color: $white-color;
+    cursor: pointer;
+    transition: background-color $transition-duration ease-in-out;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .none {
+    display: none;
+  }
+
+  .search {
+    width: 0;
+    padding: 0;
+    border: none;
+    opacity: 0;
+    transition: opacity $transition-duration ease-in-out;
+
+    &.active {
+      width: 100%;
+      padding: 5px 15px;
+      border: 1px solid $search-border-color;
+      opacity: 1;
+    }
+  }
+
+  .searchl {
+    border: 1px solid $secondary-color;
+    border-radius: 50%;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    transition: transform $transition-duration ease-in-out;
+
+    &:hover {
+      transform: rotate(360deg);
+      background-color: $secondary-color;
+    }
+  }
+
+  .search-container {
+    button{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
