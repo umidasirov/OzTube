@@ -4,7 +4,7 @@ $white-color: #fff;
 $hover-color: #3f5efb;
 $search-border-color: #fff;
 $transition-duration: 0.3s;
-$border-radius: 15px;
+$border-radius: 5px;
 
 * {
   margin: 0;
@@ -28,15 +28,13 @@ body {
   display: flex;
   align-items: center;
   transition: transform $transition-duration ease-in-out;
-
-  &:hover {
-    transform: scale(1.1);
+  &.active{
+    transform: translateX(-1000px);
   }
 
   span {
     height: 100%;
     color: $primary-color;
-    transition: color $transition-duration ease-in-out;
 
     &:hover {
       color: $secondary-color;
@@ -45,11 +43,6 @@ body {
     svg {
       font-size: 60px;
       height: 100%;
-      transition: transform $transition-duration ease-in-out;
-
-      &:hover {
-        transform: rotate(15deg);
-      }
 
       path {
         color: $secondary-color;
@@ -70,10 +63,10 @@ body {
   padding: 4px;
   width: 40%;
   transition: all $transition-duration ease-in-out;
-  
+
   input {
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     background: transparent;
     border: 1px solid $search-border-color;
     border-radius: $border-radius;
@@ -83,7 +76,7 @@ body {
     color: $white-color;
     font-size: 16px;
     transition: all $transition-duration ease-in-out;
-    
+
     &:focus {
       border-color: $hover-color;
       box-shadow: 0 0 5px $hover-color;
@@ -96,8 +89,8 @@ body {
   }
 
   button {
-    height: 100%;
-    padding: 5px 10px;
+    height: 130%;
+    padding: 10px 15px;
     border: 1px solid $search-border-color;
     border-radius: $border-radius;
     border-top-left-radius: 0;
@@ -105,10 +98,11 @@ body {
     background: $primary-color;
     color: $white-color;
     cursor: pointer;
-    transition: background-color $transition-duration ease-in-out;
+    transition: background-color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
 
     &:hover {
       background-color: $secondary-color;
+      transform: scale(1.05);
     }
   }
 }
@@ -132,13 +126,28 @@ body {
     padding: 0;
     border: none;
     opacity: 0;
-    transition: opacity $transition-duration ease-in-out;
+    transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
 
     &.active {
       width: 100%;
       padding: 5px 15px;
       border: 1px solid $search-border-color;
       opacity: 1;
+    }
+  }
+  .yaxshi.active{
+    .logo{
+      width: 0;
+    }
+    .search-container{
+      width: 100%;
+      margin-left: 0;
+      .search{
+        width: 100%;
+        padding: 5px 15px;
+        border: 1px solid $search-border-color;
+        opacity: 1;
+      }
     }
   }
 
@@ -148,7 +157,7 @@ body {
     padding: 5px;
     position: relative;
     cursor: pointer;
-    transition: transform $transition-duration ease-in-out;
+    transition: transform $transition-duration ease-in-out, background-color $transition-duration ease-in-out;
 
     &:hover {
       transform: rotate(360deg);
@@ -157,7 +166,7 @@ body {
   }
 
   .search-container {
-    button{
+    button {
       display: flex;
       flex-direction: column;
       justify-content: center;
