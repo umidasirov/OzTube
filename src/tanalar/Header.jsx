@@ -6,7 +6,7 @@ import logo from '../assets/icons/17407559549421zdr17yc/white_on_trans.png'
 import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 export default function Header() {
   return (
-    <Stack direction={'row'} spacing={6} alignItems={'center'} justifyContent={'space-between'} sx={{background:colors.primary,zIndex:999,color:"#ffff",padding:"10px 20px",}}>
+    <Stack direction={'row'} spacing={6} alignItems={'center'} justifyContent={'space-between'} sx={{background:colors.primary,zIndex:999,color:"#ffff",padding:"10px 20px",position:"fixed",width:"100%"}}>
         <Link className='logo' color="#0000" to="/"><span><SmartDisplayIcon /></span>OzTube</Link>     
           <input className='search' type='text' placeholder='Searching...'/>
         <Box />
