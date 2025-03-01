@@ -24,7 +24,6 @@
   border-color: #fff !important;
 }
 .search{
-  width: 40%;
   padding: 15px 15px; 
   border-radius: 10px;
   background: transparent;
@@ -33,11 +32,34 @@
   border: 1px solid #ffff;
   height: 40px;
   outline: none;
+  width: 100%;
   /* outline-color: #3f5efb; */
+}
+.search-container{
+  position: relative;
+  width: 40%;
 }
 .search:focus{
   border: 1px solid #3f5efb;
 }
 .search::placeholder{
   color: #fff;
+}
+.searchl{
+  position: absolute;
+  right:  10px;
+  top: 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+  .none{
+    display: none;
+  }
 }

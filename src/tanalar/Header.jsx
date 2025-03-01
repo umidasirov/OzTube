@@ -7,9 +7,13 @@ import SmartDisplayIcon from '@mui/icons-material/SmartDisplay';
 export default function Header() {
   return (
     <Stack direction={'row'} spacing={6} alignItems={'center'} justifyContent={'space-between'} sx={{background:colors.primary,zIndex:999,color:"#ffff",padding:"10px 20px",position:"fixed",width:"100%"}}>
-        <Link className='logo' color="#0000" to="/"><span><SmartDisplayIcon /></span>OzTube</Link>     
-          <input className='search' type='text' placeholder='Searching...'/>
+        <Link className='logo' color="#0000" to="/"><span><SmartDisplayIcon /></span>OzTube</Link>  
+        <div className='search-container'>  
+          <input className='search' type='text' placeholder='Searching...'/><i class="fa-solid fa-magnifying-glass searchl"></i>
+        </div>   
+        <div className='none'>
         <Box />
+        </div>
     </Stack>
   )
 }
