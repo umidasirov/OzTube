@@ -17,20 +17,21 @@ body {
   background-color: #121212;
   color: $white-color;
 }
-.App{
-  .navbar{
+
+.App {
+  .navbar {
     margin-top: 79px;
     width: 15%;
     padding: 20px;
     border: 2px solid #171717;
     position: fixed;
     height: 100%;
-    nav{
+    nav {
       display: flex;
       align-items: start;
       flex-direction: column;
       text-align: left;
-      a{
+      a {
         font-size: 20px;
         color: #b0b0b0;
         padding: 10px;
@@ -38,22 +39,23 @@ body {
         align-items: center;
         text-decoration: none;
         text-align: left;
-        i{
+        i {
           color: $primary-color;
           margin-right: 10px;
           color: #b0b0b0;
         }
-        &.active{
+        &.active {
           color: $white-color;
           font-size: 20.2px;
           transform: translateX(5px);
-          i{
+          i {
             color: $hover-color;
           }
         }
       }
     }
   }
+
   .logo {
     width: 200px;
     left: 0;
@@ -66,31 +68,30 @@ body {
     display: flex;
     align-items: center;
     transition: transform $transition-duration ease-in-out;
-    
-    
+
     span {
       height: 100%;
       color: $primary-color;
-      
+
       &:hover {
         color: $secondary-color;
       }
-      
+
       svg {
         font-size: 60px;
         height: 100%;
-  
+
         path {
           color: $secondary-color;
         }
       }
     }
   }
-  
+
   .css-1pht7va-MuiInputBase-root-MuiFilledInput-root::before {
     border-color: $white-color !important;
   }
-  
+
   .search-container {
     position: relative;
     display: flex;
@@ -98,7 +99,7 @@ body {
     height: 40px;
     width: 40%;
     transition: all $transition-duration ease-in-out;
-    
+
     input {
       width: 100%;
       padding: 10px;
@@ -112,18 +113,18 @@ body {
       font-size: 16px;
       height: 100%; /* Устанавливаем одинаковую высоту для input */
       transition: all $transition-duration ease-in-out;
-      
+
       &:focus {
         border-color: $hover-color;
         box-shadow: 0 0 5px $hover-color;
       }
-  
+
       &::placeholder {
         color: $white-color;
         transition: color $transition-duration ease-in-out;
       }
     }
-  
+
     button {
       padding: 0 15px;
       height: 100%; /* Устанавливаем одинаковую высоту для кнопки */
@@ -135,7 +136,7 @@ body {
       color: $white-color;
       cursor: pointer;
       background-color: $secondary-color;
-      
+
       &:hover {
         transition: background-color $transition-duration ease-in-out, transform $transition-duration ease-in-out;
         transform: scale(1.05);
@@ -144,30 +145,29 @@ body {
   }
 }
 
-
 @media (max-width: 600px) {
   body {
     font-size: 14px;
   }
 
-  .navbar{
+  .navbar {
     position: fixed;
     margin-top: 0 !important;
-    bottom: 0px;
+    bottom: 10px;
     width: 100% !important;
     padding: 2px !important;
     border-top: 1px solid #171717 !important;
-    border-left:none !important;
-    border-right:none !important;
-    border-bottom:none  !important;
-    height: 40px !important;
-    nav{
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    height: 60px !important;
+    nav {
       display: flex;
       padding: 5px;
       align-items: center;
       flex-direction: row !important;
       justify-content: space-evenly;
-      a{
+      a {
         font-size: 20px;
         color: #b0b0b0;
         padding: 10px;
@@ -176,70 +176,71 @@ body {
         text-decoration: none;
         flex-direction: column;
         text-align: left;
-        i{
+        i {
           color: $primary-color;
           margin-right: 10px;
           color: #b0b0b0;
         }
-        &.active{
+        &.active {
           color: $white-color;
           font-size: 20px !important;
           transform: translateX(0) !important;
-          i{
+          i {
             color: $hover-color;
           }
         }
       }
     }
+  }
 
   .container {
     width: 100%;
     padding: 10px;
   }
-  
+
   .none {
     display: none;
   }
+
   .logo.active {
     transform: translateX(-1000px);
   }
-  
+
   .search {
-    width: 0;
-    padding: 0;
+    width: 0 !important;
+    padding: 0 !important;
     border: none;
     opacity: 0;
     transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
-    
+  
     &.active {
       width: 100%;
-      transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
       padding: 5px 15px;
       border: 1px solid $search-border-color;
-      opacity: 1;
+      opacity: 1;  /* Убедимся, что инпут становится видимым */
+      transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
     }
   }
-
+  
+  
   .yaxshi.active {
     position: relative;
     .logo {
       width: 0;
     }
-
     .search-container {
       width: 100%;
       margin-left: 0;
-
-      .search {
-        width: 100%;
-        padding: 5px 15px;
-        border: 1px solid $search-border-color;
-        opacity: 1;
+      input{
+        width: 100% !important;
+        padding: 5px !important;
+        height: 100%;
       }
     }
   }
+  
 
-  .searchl {
+  .searchl i{
     padding: 5px;
     position: relative;
     cursor: pointer;
@@ -265,6 +266,7 @@ body {
   .yaxshi.active {
     .logo {
       width: 200px; /* Восстанавливаем ширину логотипа при возвращении на широкий экран */
+      transform: translateX(0px); /* Если логотип был скрыт, то убираем трансформацию */
     }
   }
-}}
+}
