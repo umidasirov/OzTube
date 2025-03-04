@@ -8,7 +8,7 @@ import { useState } from 'react'
 export default function Header() {
   const [active,setActive] = useState(false)
   return (
-    <Stack direction={'row'} spacing={6} alignItems={'center'} justifyContent={'space-between'} className={`yaxshi ${active?"active":''}`} sx={{background:colors.primary,zIndex:999,color:"#ffff",padding:"10px 20px",position:"fixed",width:"100%"}}>
+    <Stack direction={'row'} spacing={6} alignItems={'center'} justifyContent={'space-between'} className={`yaxshi ${active?"active":''}`} sx={{background:colors.primary,zIndex:99,color:"#ffff",padding:"10px 20px",position:"fixed",width:"100%"}}>
         <Link className={`logo ${active ? "active":""}`} color="#0000" to="/"><span><SmartDisplayIcon /></span>OzTube</Link>  
         <div className='search-container'>  
           <input className={`search ${active ? "active" : ""}`} type='text' placeholder='Searching...'/>

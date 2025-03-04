@@ -5,7 +5,6 @@ $hover-color: #3f5efb;
 $search-border-color: #fff;
 $transition-duration: 0.3s;
 $border-radius: 5px;
-
 * {
   margin: 0;
   padding: 0;
@@ -14,46 +13,45 @@ $border-radius: 5px;
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #121212;
+  background-color: #333333;
   color: $white-color;
 }
 
+
 .App {
   .navbar {
-    position: fixed;
+    background-color: #181818;
+    z-index: 999;
     margin-top: 79px;
     padding: 20px 0;
     border: 1px solid #171717;
+    position: fixed;
     height: 100%;
     display: flex;
     justify-content: right;
     transform: translateX(-60%);
 
-    &:hover {
+    &:hover{
       padding: 20px;
       transform: translateX(0);
-      z-index: 998;
-      nav {
+      nav{
         width: 100%;
-        
-        a {
+        a{
           &.active {
             color: $white-color;
             font-size: 20.2px;
             transform: translateX(5px);
-
             i {
               color: $hover-color;
             }
           }
-
-          span {
+          span{
             display: block;
           }
         }
       }
-    }
 
+    }
     nav {
       width: 39%;
       display: flex;
@@ -61,14 +59,19 @@ body {
       flex-direction: column;
       text-align: left;
       overflow: hidden;
-      z-index: 1000; /* Убедимся, что nav не будет скрываться */
-      
       a {
-        &:active, &:hover {
+        &:active{
           text-decoration: none !important;
           outline: none !important;
         }
-
+        &:hover{
+          text-decoration: none !important;
+          outline: none !important;
+        }
+        & {
+          text-decoration: none !important;
+          outline: none !important;
+        }
         font-size: 20px;
         color: #b0b0b0;
         padding: 10px;
@@ -76,17 +79,14 @@ body {
         align-items: center;
         text-decoration: none;
         text-align: left;
-
         i {
           color: $primary-color;
           margin-right: 10px;
           color: #b0b0b0;
         }
-
         &.active {
           color: $white-color;
           font-size: 20.2px;
-
           i {
             color: $hover-color;
           }
@@ -96,7 +96,6 @@ body {
   }
 
   .logo {
-    z-index: 1002; /* Логотип должен быть выше navbar */
     width: 200px;
     left: 0;
     transform: translateX(0px);
@@ -133,7 +132,6 @@ body {
   }
 
   .search-container {
-    z-index: 1000; /* Убедимся, что контейнер поиска не будет скрываться */
     position: relative;
     display: flex;
     align-items: center;
@@ -202,15 +200,12 @@ body {
     border-right: none !important;
     border-bottom: none !important;
     height: 60px !important;
-    z-index: 1000; /* Увеличиваем z-index на мобильных устройствах */
-
     nav {
       display: flex;
       padding: 5px;
       align-items: center;
       flex-direction: row !important;
       justify-content: space-evenly;
-
       a {
         font-size: 20px;
         color: #b0b0b0;
@@ -220,18 +215,15 @@ body {
         text-decoration: none;
         flex-direction: column;
         text-align: left;
-
         i {
           color: $primary-color;
           margin-right: 10px;
           color: #b0b0b0;
         }
-
         &.active {
           color: $white-color;
           font-size: 20px !important;
           transform: translateX(0) !important;
-
           i {
             color: $hover-color;
           }
@@ -243,7 +235,6 @@ body {
   .container {
     width: 100%;
     padding: 10px;
-    z-index: -1; /* Устанавливаем самый низкий z-index для .container */
   }
 
   .none {
@@ -260,7 +251,7 @@ body {
     border: none;
     opacity: 0;
     transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
-
+  
     &.active {
       width: 100%;
       padding: 5px 15px;
@@ -269,32 +260,30 @@ body {
       transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
     }
   }
-
-  .search-container {
+  
+  .search-container{
     justify-content: space-between !important;
   }
-
+  
   .yaxshi.active {
     position: relative;
-
     .logo {
       width: 0;
     }
-
     .search-container {
       display: flex;
       width: 100%;
       margin-left: 0;
-
-      input {
+      input{
         width: 100% !important;
         padding: 5px !important;
         height: 100%;
       }
     }
   }
+  
 
-  .searchl i {
+  .searchl i{
     padding: 5px;
     position: relative;
     cursor: pointer;
@@ -313,14 +302,10 @@ body {
     align-items: center;
     justify-content: center;
   }
-
-  .content{
-    width: 95%;
-    margin: 0 auto;
-  }
 }
 
 @media (min-width: 601px) {
+  /* Добавляем условие для широкого экрана, чтобы логотип снова появился */
   .yaxshi.active {
     .logo {
       width: 200px; /* Восстанавливаем ширину логотипа при возвращении на широкий экран */
@@ -330,10 +315,7 @@ body {
 }
 
 .routes{
-  position: relative;
-  height: 100vh;
-  width: 80%;
+  width: 92%;
   margin: 0 auto;
-  margin-top: 100px;  
-  z-index: 1;
+  margin-top: 100px;
 }

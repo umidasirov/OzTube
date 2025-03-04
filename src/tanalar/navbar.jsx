@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import { Stack } from "@mui/material";
 export default function Navbar(props) {
   return (
     <div className="navbar">
