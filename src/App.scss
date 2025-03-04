@@ -190,22 +190,27 @@ body {
   }
 
   .navbar {
+    transform: none !important;
     position: fixed;
     margin-top: 0 !important;
-    bottom: 10px;
-    width: 100% !important;
+    bottom: 0px;
+    width: 100% !important; /* Убедитесь, что ширина 100% */
     padding: 2px !important;
     border-top: 1px solid #171717 !important;
     border-left: none !important;
     border-right: none !important;
     border-bottom: none !important;
     height: 60px !important;
+    display: flex !important;
+    align-items: center;
+    transform: none; /* Убираем translateX, чтобы navbar заняла всю ширину экрана */
     nav {
       display: flex;
       padding: 5px;
       align-items: center;
       flex-direction: row !important;
       justify-content: space-evenly;
+      width: 100% !important;
       a {
         font-size: 20px;
         color: #b0b0b0;
@@ -216,9 +221,8 @@ body {
         flex-direction: column;
         text-align: left;
         i {
-          color: $primary-color;
-          margin-right: 10px;
           color: #b0b0b0;
+          margin-right: 10px;
         }
         &.active {
           color: $white-color;
@@ -256,15 +260,15 @@ body {
       width: 100%;
       padding: 5px 15px;
       border: 1px solid $search-border-color;
-      opacity: 1;  /* Убедимся, что инпут становится видимым */
+      opacity: 1;
       transition: opacity $transition-duration ease-in-out, width $transition-duration ease-in-out;
     }
   }
   
-  .search-container{
+  .search-container {
     justify-content: space-between !important;
   }
-  
+
   .yaxshi.active {
     position: relative;
     .logo {
@@ -274,16 +278,15 @@ body {
       display: flex;
       width: 100%;
       margin-left: 0;
-      input{
+      input {
         width: 100% !important;
         padding: 5px !important;
         height: 100%;
       }
     }
   }
-  
 
-  .searchl i{
+  .searchl i {
     padding: 5px;
     position: relative;
     cursor: pointer;
@@ -303,6 +306,8 @@ body {
     justify-content: center;
   }
 }
+
+
 
 @media (min-width: 601px) {
   /* Добавляем условие для широкого экрана, чтобы логотип снова появился */
