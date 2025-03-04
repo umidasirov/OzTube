@@ -20,7 +20,6 @@ body {
 
 .App {
   .navbar {
-    z-index: 1001; /* Увеличиваем z-index для navbar, чтобы он был выше остальных элементов */
     position: fixed;
     margin-top: 79px;
     padding: 20px 0;
@@ -33,7 +32,7 @@ body {
     &:hover {
       padding: 20px;
       transform: translateX(0);
-
+      z-index: 998;
       nav {
         width: 100%;
         
@@ -330,11 +329,11 @@ body {
   }
 }
 
-.content {
-  z-index: 1; /* Устанавливаем самый низкий z-index */
+.routes{
   position: relative;
   height: 100vh;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   margin-top: 100px;  
+  z-index: 1;
 }
