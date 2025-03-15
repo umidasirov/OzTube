@@ -188,7 +188,13 @@ body {
   body {
     font-size: 14px;
   }
-
+  .main-content-video{
+    display: flex;
+    flex-direction: column;
+    iframe{
+      width: 100% !important;
+    }
+  }
   .navbar {
     transform: none !important;
     position: fixed;
@@ -201,13 +207,21 @@ body {
     border-right: none !important;
     border-bottom: none !important;
     height: 60px !important;
+<<<<<<< HEAD
     display: flex !important;
     align-items: center;
     transform: none; /* Убираем translateX, чтобы navbar заняла всю ширину экрана */
+=======
+    transform: translateX(0) !important;
+    flex-direction: row;
+    justify-content: space-evenly;
+    bottom: 0;
+    width: 100%;
+>>>>>>> 3d82547 (Ваше сообщение коммита)
     nav {
       display: flex;
       padding: 5px;
-      align-items: center;
+      align-items: center !important;
       flex-direction: row !important;
       justify-content: space-evenly;
       width: 100% !important;
@@ -325,7 +339,16 @@ body {
   margin-top: 100px;
 }
 .main-content-video{
-  li{
-    list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  list-style: none;
+  h2{
+    width: 560px;
+    overflow: hidden !important;
+  }
+  p{
+    width: 560px;
   }
 }
